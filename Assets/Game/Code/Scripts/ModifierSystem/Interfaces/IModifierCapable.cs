@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ICollisionDamaging
+public interface IModifierCapable
 {
-    float Damage { get; }
+    List<ModifierFactory> Modifiers { get; }
 }
