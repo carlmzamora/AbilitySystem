@@ -8,6 +8,8 @@ public class DamageOverTimeModifierFactory : ModifierFactory<DamageOverTimeModif
 public class DamageOverTimeModifier : Modifier<DamageOverTimeModifierData>
 {
     private HealthController healthController;
+    private float lastTickTime;
+    private float timeBetweenRefreshAndLastTick;
 
     public override void Instantiate(bool timedStack)
     {
@@ -25,9 +27,15 @@ public class DamageOverTimeModifier : Modifier<DamageOverTimeModifierData>
         {
             yield return new WaitForSeconds(derivedData.tickInterval);
             healthController.TakeDamage(derivedData.damagePerTick * currentStacks);
+            lastTickTime = Time.time;
         }
 
         Remove();
+    }
+    public override void Refresh()
+    {
+        timeBetweenRefreshAndLastTick = lastTickTime - Time.time;
+        startTime = Time.time + timeBetweenRefreshAndLastTick; //adjust resetting of time to ensure no extra tick occures
     }
 }
 

@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     modifierName: TestBurn
+    totalDuration: 5
+    singleInstanceOnly: 1
+    maxStacks: 0
+    refreshOnReapply: 1
+    timedStacks: 0
     damagePerTick: 5
     tickCount: 5
     tickInterval: 1
