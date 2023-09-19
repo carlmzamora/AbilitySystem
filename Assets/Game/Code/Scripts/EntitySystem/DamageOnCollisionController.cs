@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageOnCollisionController : MonoBehaviour, IDamaging, IModifierCapable
+public class DamageOnCollisionController : MonoBehaviour, IDamaging, IModifierSender
 {
     [SerializeField] private float damage;
     public float Damage => damage;

@@ -15,7 +15,7 @@ public class DamageOverTimeModifier : Modifier<DamageOverTimeModifierData>
     {
         base.Instantiate(timedStack);
 
-        baseData.totalDuration = derivedData.tickCount * derivedData.tickInterval;
+        totalDuration = specialData.tickCount * specialData.tickInterval;
         healthController = target.GetComponent<HealthController>();
         target.StartCoroutine(DamageOverTimeCoroutine());
     }
@@ -23,10 +23,10 @@ public class DamageOverTimeModifier : Modifier<DamageOverTimeModifierData>
     private IEnumerator DamageOverTimeCoroutine()
     {
         startTime = Time.time;
-        while (Time.time - startTime <= baseData.totalDuration)
+        while (Time.time - startTime <= totalDuration)
         {
-            yield return new WaitForSeconds(derivedData.tickInterval);
-            healthController.TakeDamage(derivedData.damagePerTick * currentStacks);
+            yield return new WaitForSeconds(specialData.tickInterval);
+            healthController.TakeDamage(specialData.damagePerTick * currentStacks);
             lastTickTime = Time.time;
         }
 

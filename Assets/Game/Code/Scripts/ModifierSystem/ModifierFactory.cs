@@ -15,6 +15,6 @@ public class ModifierFactory<TModifierDataType, TModifierType> : ModifierFactory
 
     public override Modifier GetModifier(MonoBehaviour target)
     {
-        return new TModifierType { baseData = this.data, derivedData = this.data, target = target };
+        return new TModifierType { baseData = this.data, specialData = this.data, target = target };
     }
 }

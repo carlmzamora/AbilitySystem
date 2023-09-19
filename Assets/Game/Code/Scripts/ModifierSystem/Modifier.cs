@@ -7,6 +7,10 @@ public abstract class Modifier
 {
     public ModifierData baseData;
     public int currentStacks;
+    public MonoBehaviour target;
+    protected float totalDuration;
+    protected float startTime;
+
     public abstract void Instantiate(bool timedStack);
     public abstract void AddStack(bool timed);
     public abstract void Refresh();
@@ -16,9 +20,7 @@ public abstract class Modifier
 
 public abstract class Modifier<TModifierDataType> : Modifier
 {
-    public TModifierDataType derivedData;
-    public MonoBehaviour target;
-    protected float startTime;
+    public TModifierDataType specialData;
 
     public override void Instantiate(bool timedStack)
     {
@@ -46,7 +48,7 @@ public abstract class Modifier<TModifierDataType> : Modifier
     }
     protected override IEnumerator TimedStackCoroutine()
     {
-        yield return new WaitForSeconds(baseData.totalDuration);
+        yield return new WaitForSeconds(totalDuration);
         currentStacks--;
     }
 }
@@ -54,7 +56,6 @@ public abstract class Modifier<TModifierDataType> : Modifier
 public abstract class ModifierData
 {
     public string modifierName;
-    public float totalDuration;
     public bool singleInstanceOnly;
     public int maxStacks;
     public bool refreshOnReapply;
