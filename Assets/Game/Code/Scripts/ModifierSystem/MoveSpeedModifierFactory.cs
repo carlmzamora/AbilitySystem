@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Modifiers/Move Speed Modifier")]
 public class MoveSpeedModifierFactory : ModifierFactory<MoveSpeedModifierData, MoveSpeedModifier> { }
 
 public class MoveSpeedModifier : Modifier<MoveSpeedModifierData>
@@ -60,6 +61,7 @@ public class MoveSpeedModifier : Modifier<MoveSpeedModifierData>
     }
 }
 
+[System.Serializable]
 public class MoveSpeedModifierData : ModifierData
 {
     public bool usePercent;

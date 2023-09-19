@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class AttributesController : MonoBehaviour
 {
-    [SerializeField] private float defaultMoveSpeed = 3000;
+    private IMoveSpeedStatCapable moveSpeedStatUser;
 
-    private float currentMoveSpeed;
     private float baseMoveSpeed;
     private float percentBasedMoveSpeedMultipliers;
     private float flatMoveSpeedBonuses;
 
     void Start()
     {
-        baseMoveSpeed = defaultMoveSpeed;
-        currentMoveSpeed = baseMoveSpeed;
+        moveSpeedStatUser = GetComponent<IMoveSpeedStatCapable>();
+
+        baseMoveSpeed = moveSpeedStatUser.BaseMoveSpeed;
     }
 
     #region MOVESPEED
@@ -45,7 +45,8 @@ public class AttributesController : MonoBehaviour
 
     private void UpdateCurrentMoveSpeed()
     {
-        currentMoveSpeed = (baseMoveSpeed + flatMoveSpeedBonuses) * (percentBasedMoveSpeedMultipliers * 0.01f);
+        float currentMoveSpeed = (baseMoveSpeed + flatMoveSpeedBonuses) * (1 + percentBasedMoveSpeedMultipliers * 0.01f);
+        moveSpeedStatUser.SetCurrentMoveSpeed(currentMoveSpeed);
     }
 
     #endregion
