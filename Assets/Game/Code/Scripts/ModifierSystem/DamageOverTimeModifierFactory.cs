@@ -34,8 +34,18 @@ public class DamageOverTimeModifier : Modifier<DamageOverTimeModifierData>
     }
     public override void Refresh()
     {
-        timeBetweenRefreshAndLastTick = lastTickTime - Time.time;
-        startTime = Time.time + timeBetweenRefreshAndLastTick; //adjust resetting of time to ensure no extra tick occures
+        float timeOfRefresh = Time.time;
+
+        if (lastTickTime > 0)
+        {
+            timeBetweenRefreshAndLastTick = lastTickTime - timeOfRefresh;
+        }
+        else
+        {
+            timeBetweenRefreshAndLastTick = startTime - timeOfRefresh;
+        }
+
+        startTime = Time.time + timeBetweenRefreshAndLastTick; //adjust resetting of time to ensure no extra tick occurs
     }
 }
 

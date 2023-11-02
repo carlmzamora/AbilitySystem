@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageOnCollisionController : MonoBehaviour, IDamaging, IModifierSender
+public class DamageOnContactController : MonoBehaviour, IDamaging, IModifierSender
 {
     [SerializeField] private float damage;
     public float Damage => damage;
@@ -10,7 +10,7 @@ public class DamageOnCollisionController : MonoBehaviour, IDamaging, IModifierSe
     [SerializeField] private List<ModifierFactory> modifiers;
     public List<ModifierFactory> Modifiers => modifiers;
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         IHealthStatCapable healthController = other.gameObject.GetComponent<IHealthStatCapable>();
 
