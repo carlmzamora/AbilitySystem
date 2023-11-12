@@ -7,8 +7,8 @@ public class DamageOnContactController : MonoBehaviour, IDamaging, IModifierSend
     [SerializeField] private float damage;
     public float Damage => damage;
 
-    [SerializeField] private List<ModifierFactory> modifiers;
-    public List<ModifierFactory> Modifiers => modifiers;
+    private List<Modifier> modifiers = new();
+    public List<Modifier> Modifiers => modifiers;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,7 +29,8 @@ public class DamageOnContactController : MonoBehaviour, IDamaging, IModifierSend
 
         for(int i = 0; i < modifiers.Count; i++)
         {
-            rmc.ApplyModifier(modifiers[i].GetModifier(rmc.GetComponent<MonoBehaviour>()));
+            modifiers[i].SetTarget(rmc.GetComponent<MonoBehaviour>());
+            rmc.ApplyModifier(modifiers[i]);
         }
     }
 }

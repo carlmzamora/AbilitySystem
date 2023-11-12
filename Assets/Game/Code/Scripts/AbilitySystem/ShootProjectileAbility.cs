@@ -15,7 +15,12 @@ public class ShootProjectileAbility : Ability
 
     public override void Activate(GameObject owner)
     {
-        if (shootingController != null)
-            Instantiate(projectileReference, shootingController.ProjectileSpawnpoint.position, shootingController.ProjectileSpawnpoint.rotation);
+        /*if (shootingController != null)
+            Instantiate(projectileReference, shootingController.ProjectileSpawnpoint.position, shootingController.ProjectileSpawnpoint.rotation);*/
+    }
+
+    public override void UpdateAttributes()
+    {
+        throw new System.NotImplementedException();
     }
 }

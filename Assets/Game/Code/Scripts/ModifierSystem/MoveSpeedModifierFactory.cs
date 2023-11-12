@@ -24,6 +24,11 @@ public class MoveSpeedModifier : Modifier<MoveSpeedModifierData>
         target.StartCoroutine(DurationCoroutine());
     }
 
+    public override Modifier Clone()
+    {
+        return new MoveSpeedModifier { baseData = this.baseData, specialData = this.specialData, target = this.target };
+    }
+
     public override void AddStack(bool timed)
     {
         base.AddStack(timed);

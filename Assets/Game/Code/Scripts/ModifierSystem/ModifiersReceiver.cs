@@ -20,11 +20,10 @@ public class ModifiersReceiver : MonoBehaviour
         {
             modifier.Instantiate(baseData.timedStacks);
             currentModifierList.Add(modifier);
-            Debug.Log("Ola!");
         }
         else
         {
-            if(baseData.singleInstanceOnly)
+            if (baseData.singleInstanceOnly)
             {
                 Modifier firstInstance = currentModifierList[0];
                 int firstInstanceStacks = firstInstance.currentStacks;

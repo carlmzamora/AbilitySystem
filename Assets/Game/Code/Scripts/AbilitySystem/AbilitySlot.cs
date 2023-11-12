@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityHolder : MonoBehaviour
+public class AbilitySlot : MonoBehaviour
 {
     enum AbilityState
     {
@@ -11,10 +11,12 @@ public class AbilityHolder : MonoBehaviour
         COOLDOWN
     }
 
-    [SerializeField] private Ability ability;
+    [SerializeField] private AbilityFactory ability;
     [SerializeField] private bool useMouseButton = false;
     [SerializeField] private KeyCode keyToPress;
     [SerializeField] private int mouseButtonInt;
+
+    private Ability abilityInstance;
 
     private float activeTimeProgress;
     private float cooldownTimeProgress;
@@ -22,7 +24,8 @@ public class AbilityHolder : MonoBehaviour
 
     private void Start()
     {
-        ability.Setup(gameObject);
+        abilityInstance = ability.GetAbility();
+        abilityInstance.Setup(gameObject);
     }
 
     private void Update()
@@ -34,18 +37,18 @@ public class AbilityHolder : MonoBehaviour
                 {
                     if (Input.GetKeyDown(keyToPress))
                     {
-                        ability.Activate(gameObject);
+                        abilityInstance.Activate(gameObject);
                         state = AbilityState.ACTIVE;
-                        activeTimeProgress = ability.duration;
+                        activeTimeProgress = abilityInstance.data.duration;
                     }
                 }
                 else
                 {
                     if (Input.GetMouseButtonDown(mouseButtonInt))
                     {
-                        ability.Activate(gameObject);
+                        abilityInstance.Activate(gameObject);
                         state = AbilityState.ACTIVE;
-                        activeTimeProgress = ability.duration;
+                        activeTimeProgress = abilityInstance.data.duration;
                     }
                 }
                 break;
@@ -57,7 +60,7 @@ public class AbilityHolder : MonoBehaviour
                 else
                 {
                     state = AbilityState.COOLDOWN;
-                    cooldownTimeProgress = ability.cooldown;
+                    cooldownTimeProgress = abilityInstance.data.cooldown;
                 }
                 break;
             case AbilityState.COOLDOWN:

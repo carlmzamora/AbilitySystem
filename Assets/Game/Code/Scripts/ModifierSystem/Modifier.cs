@@ -11,7 +11,9 @@ public abstract class Modifier
     protected float totalDuration;
     protected float startTime;
 
+    public abstract void SetTarget(MonoBehaviour target);
     public abstract void Instantiate(bool timedStack);
+    public abstract Modifier Clone();
     public abstract void AddStack(bool timed);
     public abstract void Refresh();
     public abstract void Remove();
@@ -21,6 +23,11 @@ public abstract class Modifier
 public abstract class Modifier<TModifierDataType> : Modifier
 {
     public TModifierDataType specialData;
+
+    public override void SetTarget(MonoBehaviour target)
+    {
+        this.target = target;
+    }
 
     public override void Instantiate(bool timedStack)
     {
@@ -44,7 +51,10 @@ public abstract class Modifier<TModifierDataType> : Modifier
 
         rm.Modifiers[type].Remove(this);
         if (rm.Modifiers[type].Count <= 0)
+        {
+            
             rm.Modifiers.Remove(type);
+        }
     }
     protected override IEnumerator TimedStackCoroutine()
     {

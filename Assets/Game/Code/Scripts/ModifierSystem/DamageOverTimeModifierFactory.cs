@@ -20,6 +20,11 @@ public class DamageOverTimeModifier : Modifier<DamageOverTimeModifierData>
         target.StartCoroutine(DamageOverTimeCoroutine());
     }
 
+    public override Modifier Clone()
+    {
+        return new DamageOverTimeModifier { baseData = this.baseData, specialData = this.specialData, target = this.target };
+    }
+
     private IEnumerator DamageOverTimeCoroutine()
     {
         startTime = Time.time;
