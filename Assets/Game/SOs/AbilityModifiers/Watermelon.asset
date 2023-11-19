@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d461bd6ea9b05fe44925f75ff6d0fd36, type: 3}
-  m_Name: Slow
+  m_Script: {fileID: 11500000, guid: 25d4d73f67a8e584089e62e57b07c07b, type: 3}
+  m_Name: Watermelon
   m_EditorClassIdentifier: 
-  data:
-    modifierName: BasicSlow
-    singleInstanceOnly: 1
-    maxStacks: 1
-    refreshOnReapply: 1
-    timedStacks: 0
-    usePercent: 1
-    value: -50
-    duration: 3
+  attributeName: {fileID: 11400000, guid: 2e3264a492d8c0a44ab8cbc2aadfe51e, type: 2}
+  operationToApply: 2
+  value: 20

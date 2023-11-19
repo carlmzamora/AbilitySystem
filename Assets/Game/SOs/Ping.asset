@@ -19,5 +19,6 @@ MonoBehaviour:
     objectReference: {fileID: 5868696208601756331, guid: 51079a60b2d31f244b3a6830aed53ce7, type: 3}
     objectModifiers:
     - {fileID: 11400000, guid: f203fba1b7b3c37439b4931fd73236d1, type: 2}
+    - {fileID: 11400000, guid: 02fbce20966453b478795a98523e7c01, type: 2}
     objectCount: 1
     coneAngle: 15

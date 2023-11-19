@@ -75,4 +75,9 @@ public class AbilitySlot : MonoBehaviour
                 break;
         }
     }
+
+    public void UpdateAbilityInstance(AbilityModifier_Float abilityModifier)
+    {
+        Debug.Log(abilityModifier.attributeName);
+    }
 }

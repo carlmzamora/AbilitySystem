@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "AbilityAttribute")]
 public class AbilityAttribute : ScriptableObject { }
