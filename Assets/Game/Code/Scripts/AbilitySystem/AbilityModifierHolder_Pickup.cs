@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class AbilityModifierHolder_Pickup : MonoBehaviour
 {
-    [SerializeField] private EventNotifierAbilityModifier_Float OnPickUpEvent;
-    [SerializeField] private List<AbilityModifier_Float> floatAttributes;
+    [SerializeField] private EventNotifier_AbilityModifierContent OnPickUpEvent;
+    [SerializeField] private List<FloatAbilityAttributeModifier> floatAttributes;
+    [SerializeField] private List<IntAbilityAttributeModifier> intAttributes;
+
+    private AbilityModifierContent contents;
+
+    private void Start()
+    {
+        contents.floatAbilityAttributeModifiers = floatAttributes;
+        contents.intAbilityAttributeModifiers = intAttributes;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        foreach(AbilityModifier_Float modifier in floatAttributes)
-        {
-            OnPickUpEvent.Raise(modifier);
-        }
+        OnPickUpEvent.Raise(contents);
     }
 }

@@ -76,7 +76,7 @@ public class AbilitySlot : MonoBehaviour
         }
     }
 
-    public void UpdateAbilityInstance(AbilityModifier_Float abilityModifier)
+    public void UpdateAbilityInstance(FloatAbilityAttributeModifier abilityModifier)
     {
         Debug.Log(abilityModifier.attributeName);
     }
