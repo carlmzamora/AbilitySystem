@@ -19,6 +19,6 @@ public abstract class Ability<TAbilityDataType> : Ability
 public class AbilityData
 {
     public string abilityName;
-    public float duration;
-    public float cooldown;
+    public Attribute_Float duration;
+    public Attribute_Float cooldown;
 }

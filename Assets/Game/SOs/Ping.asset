@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     abilityName: Ping
-    duration: 0
-    cooldown: 0
+    duration: {fileID: 11400000, guid: bb5bf91531eb8ba4d8c7e43bb2405568, type: 2}
+    cooldown: {fileID: 11400000, guid: cc6d72e49e2aa394fa756e1b1f033659, type: 2}
     objectReference: {fileID: 5868696208601756331, guid: 51079a60b2d31f244b3a6830aed53ce7, type: 3}
     objectModifiers:
     - {fileID: 11400000, guid: f203fba1b7b3c37439b4931fd73236d1, type: 2}

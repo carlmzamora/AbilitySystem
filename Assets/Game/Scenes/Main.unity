@@ -746,19 +746,7 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 516deeffeffbe8342a96a57654084561, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 280237311}
-        m_TargetAssemblyTypeName: AbilitySlot, Assembly-CSharp
-        m_MethodName: UpdateAbilityInstance
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &329400281
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,8 +898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnPickUpEvent: {fileID: 11400000, guid: 516deeffeffbe8342a96a57654084561, type: 2}
-  floatAttributes:
-  - {fileID: 11400000, guid: b2e5df1006e16dc45b662ac7d7509293, type: 2}
+  floatAttributes: []
+  intAttributes: []
 --- !u!1 &558425395
 GameObject:
   m_ObjectHideFlags: 0

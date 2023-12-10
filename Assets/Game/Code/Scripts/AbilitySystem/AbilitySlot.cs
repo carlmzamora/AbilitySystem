@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AbilityState
+{
+    READY,
+    ACTIVE,
+    COOLDOWN
+}
+
 public class AbilitySlot : MonoBehaviour
 {
-    enum AbilityState
-    {
-        READY,
-        ACTIVE,
-        COOLDOWN
-    }
-
     [SerializeField] private AbilityFactory ability;
     [SerializeField] private bool useMouseButton = false;
     [SerializeField] private KeyCode keyToPress;
@@ -74,10 +74,5 @@ public class AbilitySlot : MonoBehaviour
                 }
                 break;
         }
-    }
-
-    public void UpdateAbilityInstance(FloatAbilityAttributeModifier abilityModifier)
-    {
-        Debug.Log(abilityModifier.attributeName);
     }
 }

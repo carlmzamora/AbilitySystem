@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AbilityAttributeModifier/Float")]
 public class FloatAbilityAttributeModifier : ScriptableObject
 {
-    public AbilityAttribute attributeName;
+    public Attribute attributeName;
     public AbilityAttributeOperation operationToApply;
     public float value;
 }
@@ -13,7 +13,7 @@ public class FloatAbilityAttributeModifier : ScriptableObject
 [CreateAssetMenu(menuName = "AbilityAttributeModifier/Int")]
 public class IntAbilityAttributeModifier : ScriptableObject
 {
-    public AbilityAttribute attributeName;
+    public Attribute attributeName;
     public AbilityAttributeOperation operationToApply;
     public float value;
 }
