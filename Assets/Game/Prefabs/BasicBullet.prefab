@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4384346588690388524}
   - component: {fileID: 4284705253409708653}
   - component: {fileID: -7363065343300484799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BasicBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,6 +162,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  modifiers:
-  - {fileID: 11400000, guid: 02fbce20966453b478795a98523e7c01, type: 2}
-  - {fileID: 11400000, guid: f203fba1b7b3c37439b4931fd73236d1, type: 2}

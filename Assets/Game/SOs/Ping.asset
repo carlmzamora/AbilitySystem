@@ -16,9 +16,9 @@ MonoBehaviour:
     abilityName: Ping
     duration: {fileID: 11400000, guid: bb5bf91531eb8ba4d8c7e43bb2405568, type: 2}
     cooldown: {fileID: 11400000, guid: cc6d72e49e2aa394fa756e1b1f033659, type: 2}
-    objectReference: {fileID: 5868696208601756331, guid: 51079a60b2d31f244b3a6830aed53ce7, type: 3}
-    objectModifiers:
-    - {fileID: 11400000, guid: f203fba1b7b3c37439b4931fd73236d1, type: 2}
+    spawnReference: {fileID: 5868696208601756331, guid: 51079a60b2d31f244b3a6830aed53ce7, type: 3}
+    spawnModifiers:
     - {fileID: 11400000, guid: 02fbce20966453b478795a98523e7c01, type: 2}
-    objectCount: 1
-    coneAngle: 15
+    - {fileID: 11400000, guid: f203fba1b7b3c37439b4931fd73236d1, type: 2}
+    spawnCount: {fileID: 11400000, guid: 60e8800d47e061c49a9bb8f8c3f39978, type: 2}
+    coneAngle: {fileID: 11400000, guid: b2766445f9ce915408bc89dc295827b0, type: 2}
